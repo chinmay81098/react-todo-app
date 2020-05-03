@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 function TodoItem(props) {
     const completedItem = {
         textDecoration: "line-through",
@@ -11,7 +8,9 @@ function TodoItem(props) {
     }
     return (
         <div className="todo-item">
-            <input type="checkbox" checked={props.item.completed} onChange={()=>{props.handleChange(props.item.id)}}/>
+            <input type="checkbox" 
+            checked={props.item.completed} 
+            onChange={()=>{props.handleChange(props.item.id)}}/>
             <p style = {props.item.completed ? completedItem : null}>{props.item.text}</p>
         </div>
     )

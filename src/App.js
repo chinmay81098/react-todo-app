@@ -18,21 +18,26 @@ class App extends Component {
           if(todo.id === id ){
             todo.completed = !todo.completed
           }
-          return todo
+          return todo;
       })
       return {
         todos: updatedTodos
       }
     })
   }
+
+
   
   render() {
     const todoItem = this.state.todos.map(item =>
       <TodoItem key={item.id} item={item} handleChange={this.handleChange} />) 
 
     return (
+      <div>
+      <h1 style={{textAlign:"center"}}>Todo List</h1>
       <div className="todo-list">
         {todoItem}
+      </div>
       </div>
     )
   }
